@@ -13,6 +13,7 @@
 		0E2A411823ED49E50098F146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2A411623ED49E50098F146 /* Main.storyboard */; };
 		0E2A411A23ED49E80098F146 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E2A411923ED49E80098F146 /* Assets.xcassets */; };
 		0E2A411D23ED49E80098F146 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2A411B23ED49E80098F146 /* LaunchScreen.storyboard */; };
+		0E2A412523EDD1F80098F146 /* CharacterGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A412423EDD1F80098F146 /* CharacterGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0E2A411923ED49E80098F146 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E2A411C23ED49E80098F146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E2A411E23ED49E80098F146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E2A412423EDD1F80098F146 /* CharacterGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				0E2A411923ED49E80098F146 /* Assets.xcassets */,
 				0E2A411B23ED49E80098F146 /* LaunchScreen.storyboard */,
 				0E2A411E23ED49E80098F146 /* Info.plist */,
+				0E2A412423EDD1F80098F146 /* CharacterGenerator.swift */,
 			);
 			path = PPP;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				0E2A411523ED49E50098F146 /* ViewController.swift in Sources */,
 				0E2A411123ED49E50098F146 /* AppDelegate.swift in Sources */,
 				0E2A411323ED49E50098F146 /* SceneDelegate.swift in Sources */,
+				0E2A412523EDD1F80098F146 /* CharacterGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
