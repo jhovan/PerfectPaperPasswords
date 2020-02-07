@@ -20,9 +20,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func generateButton(_ sender: Any) {
+        let rows = 10
+        let columns = 4
+        let passCodeLength = 4
         let generator = CharacterGenerator()
+        let cardFormatter = CardFormatter(rows: rows, columns: columns, passCodeLength: passCodeLength)
         sequenceKeyLabel.text =  generator.getKeyAsData().hexEncodedString(options: .upperCase)
-        passwordsLabel.text = generator.generate(counter: 0, numberOfCharacters: 160).0
+        let chars = generator.generate(counter: 0, numberOfCharacters: UInt(rows*columns*passCodeLength)).0
+        passwordsLabel.text = cardFormatter.format(chars: chars)
+        
     }
         
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CardFormater {
+class CardFormatter {
     
     let rowNames = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
     
@@ -22,10 +22,13 @@ class CardFormater {
         self.passcodeLength = passCodeLength
     }
     
-    func format(chars: String) {
-        var string = ""
+    func format(chars: String) -> String {
+        var string = "\t"
         var chars = chars
         for i in 1 ... columns {
+            for _ in 1 ... passcodeLength {
+                string.append(" ")
+            }
             string.append(String(rowNames[i - 1]) + "\t")
         }
         
@@ -36,10 +39,10 @@ class CardFormater {
                 for _ in 1 ... passcodeLength {
                     passcode.append(chars.removeFirst())
                 }
-                string.append("\t")
+                string.append("\(passcode)\t")
             }
         }
-        
+        return string
     }
 
 }
