@@ -60,6 +60,7 @@
 		0E2A410F23ED49E50098F146 /* PPP */ = {
 			isa = PBXGroup;
 			children = (
+				0E2A412823EE08D60098F146 /* Util */,
 				0E2A411023ED49E50098F146 /* AppDelegate.swift */,
 				0E2A411223ED49E50098F146 /* SceneDelegate.swift */,
 				0E2A411423ED49E50098F146 /* ViewController.swift */,
@@ -67,10 +68,17 @@
 				0E2A411923ED49E80098F146 /* Assets.xcassets */,
 				0E2A411B23ED49E80098F146 /* LaunchScreen.storyboard */,
 				0E2A411E23ED49E80098F146 /* Info.plist */,
+			);
+			path = PPP;
+			sourceTree = "<group>";
+		};
+		0E2A412823EE08D60098F146 /* Util */ = {
+			isa = PBXGroup;
+			children = (
 				0E2A412423EDD1F80098F146 /* CharacterGenerator.swift */,
 				0E2A412623EE02BE0098F146 /* CardFormatter.swift */,
 			);
-			path = PPP;
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
