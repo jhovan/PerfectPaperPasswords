@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var sequenceKeyLabel: UILabel!
     
     @IBOutlet weak var passwordsLabel: UILabel!
+
+    @IBOutlet weak var counterLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,9 @@ class ViewController: UIViewController {
         let generator = CharacterGenerator()
         let cardFormatter = CardFormatter(rows: rows, columns: columns, passCodeLength: passCodeLength)
         sequenceKeyLabel.text =  generator.getKeyAsData().hexEncodedString(options: .upperCase)
-        let chars = generator.generate(counter: 0, numberOfCharacters: UInt(rows*columns*passCodeLength)).0
+        let result = generator.generate(counter: 0, numberOfCharacters: UInt(rows*columns*passCodeLength))
+        let chars = result.0
+        counterLabel.text = "\(result.1)"
         passwordsLabel.text = cardFormatter.format(chars: chars)
         
     }
