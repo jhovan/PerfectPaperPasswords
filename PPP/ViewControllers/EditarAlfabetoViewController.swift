@@ -26,13 +26,13 @@ class EditarAlfabetoViewController: UIViewController {
             currentAlphabet = String(decoding: receivedData, as: UTF8.self)
         }
         else {
-            currentAlphabet = "!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+            currentAlphabet = Constants.DEFAULT_ALPHABET
         }
         alfabetoText.text = currentAlphabet
     }
     
     @IBAction func restaurarButton(_ sender: Any) {
-        alfabetoText.text = "!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+        alfabetoText.text = Constants.DEFAULT_ALPHABET
     }
     
     @IBAction func aceptarButton(_ sender: Any) {
