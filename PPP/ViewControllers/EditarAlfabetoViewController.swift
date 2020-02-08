@@ -51,5 +51,8 @@ class EditarAlfabetoViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func vaciarButton(_ sender: Any) {
+        alfabetoText.text = ""
+    }
     
 }

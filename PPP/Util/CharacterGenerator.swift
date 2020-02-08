@@ -53,7 +53,7 @@ class CharacterGenerator {
         if let receivedData = KeyChain.load(key: "Alphabet") {
             return Array(String(decoding: receivedData, as: UTF8.self))
         }
-        return Array("!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz")
+        return Array(Constants.DEFAULT_ALPHABET)
     }
         
     
