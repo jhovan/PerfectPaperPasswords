@@ -22,7 +22,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         if let receivedData = KeyChain.load(key: "SequenceKey") {
             let generator = CharacterGenerator()
             let cardFormatter = CardFormatter(rows: rows, columns: columns, passCodeLength: passCodeLength)
@@ -32,7 +34,6 @@ class ViewController: UIViewController {
             counterLabel.text = "\(result.1)"
             passwordsLabel.text = cardFormatter.format(chars: chars)
         }
-        
     }
 
     @IBAction func generateButton(_ sender: Any) {

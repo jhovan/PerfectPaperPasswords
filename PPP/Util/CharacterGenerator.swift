@@ -9,9 +9,6 @@
 import Foundation
 import CryptoKit
 
-// standar 64 bit PPP alphabet
-let alphabet = Array("!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz")
-
 class CharacterGenerator {
     
     var key: SymmetricKey
@@ -32,6 +29,7 @@ class CharacterGenerator {
     }
     
     func generate(counter: UInt128, numberOfCharacters: UInt) -> (String, UInt128){
+        let alphabet = getAlphabetFromKeyChain()
         var chars = ""
         var counter = counter
         while(chars.count < numberOfCharacters) {
@@ -49,6 +47,15 @@ class CharacterGenerator {
             counter += 1
         }
         return (chars, counter)
+    }
+    
+    func getAlphabetFromKeyChain() -> [Character] {
+        if let receivedData = KeyChain.load(key: "Alphabet") {
+            return Array(receivedData.withUnsafeBytes {
+                $0.load(as: String.self)
+            })
+        }
+        return Array("!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz")
     }
         
     
