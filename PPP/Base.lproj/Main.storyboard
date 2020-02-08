@@ -75,7 +75,7 @@
                                 <rect key="frame" x="210" y="12" width="102" height="30"/>
                                 <state key="normal" title="Editar Alfabeto"/>
                                 <connections>
-                                    <segue destination="Srp-BL-4e9" kind="presentation" id="pw4-DV-fUf"/>
+                                    <segue destination="Srp-BL-4e9" kind="presentation" modalPresentationStyle="fullScreen" id="pw4-DV-fUf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -118,7 +118,7 @@
             <objects>
                 <viewController id="Srp-BL-4e9" customClass="EditarAlfabetoViewController" customModule="PPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0NN-c1-dMv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVc-xc-rzc">
