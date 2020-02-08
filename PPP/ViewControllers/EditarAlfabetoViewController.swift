@@ -19,6 +19,7 @@ class EditarAlfabetoViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.popViewController(animated: true)
 
+
         var currentAlphabet: String
 
         if let receivedData = KeyChain.load(key: "Alphabet") {
@@ -35,7 +36,10 @@ class EditarAlfabetoViewController: UIViewController {
     }
     
     @IBAction func aceptarButton(_ sender: Any) {
-        let trimmedString = (alfabetoText.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+        var trimmedString = (alfabetoText.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmedString.isEmpty {
+            trimmedString = " "
+        }
         let data: Data = trimmedString.data(using: .utf8)!
         //let data = withUnsafeBytes(of: trimmedString) { Data($0) }
         let status = KeyChain.save(key: "Alphabet", data: data)
