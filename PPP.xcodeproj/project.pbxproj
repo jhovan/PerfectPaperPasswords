@@ -17,6 +17,7 @@
 		0E2A412523EDD1F80098F146 /* CharacterGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A412423EDD1F80098F146 /* CharacterGenerator.swift */; };
 		0E2A412723EE02BE0098F146 /* CardFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A412623EE02BE0098F146 /* CardFormatter.swift */; };
 		0EDF5FBE23EF0CB90043C07B /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDF5FBD23EF0CB90043C07B /* KeyChain.swift */; };
+		0EDF5FC023EF23B00043C07B /* EditarAlfabetoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDF5FBF23EF23B00043C07B /* EditarAlfabetoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		0E2A412423EDD1F80098F146 /* CharacterGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterGenerator.swift; sourceTree = "<group>"; };
 		0E2A412623EE02BE0098F146 /* CardFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFormatter.swift; sourceTree = "<group>"; };
 		0EDF5FBD23EF0CB90043C07B /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
+		0EDF5FBF23EF23B00043C07B /* EditarAlfabetoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarAlfabetoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +66,10 @@
 		0E2A410F23ED49E50098F146 /* PPP */ = {
 			isa = PBXGroup;
 			children = (
+				0EDF5FC123EF26D20043C07B /* ViewControllers */,
 				0E2A412823EE08D60098F146 /* Util */,
 				0E2A411023ED49E50098F146 /* AppDelegate.swift */,
 				0E2A411223ED49E50098F146 /* SceneDelegate.swift */,
-				0E2A411423ED49E50098F146 /* MainViewController.swift */,
 				0E2A411623ED49E50098F146 /* Main.storyboard */,
 				0E2A411923ED49E80098F146 /* Assets.xcassets */,
 				0E2A411B23ED49E80098F146 /* LaunchScreen.storyboard */,
@@ -85,6 +87,15 @@
 				0EDF5FBD23EF0CB90043C07B /* KeyChain.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		0EDF5FC123EF26D20043C07B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0E2A411423ED49E50098F146 /* MainViewController.swift */,
+				0EDF5FBF23EF23B00043C07B /* EditarAlfabetoViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 				0EDF5FBE23EF0CB90043C07B /* KeyChain.swift in Sources */,
 				0E2A412523EDD1F80098F146 /* CharacterGenerator.swift in Sources */,
 				0E069E5B23EE9A030012A9D9 /* UInt128.swift in Sources */,
+				0EDF5FC023EF23B00043C07B /* EditarAlfabetoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

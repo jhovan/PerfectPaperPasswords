@@ -51,9 +51,7 @@ class CharacterGenerator {
     
     func getAlphabetFromKeyChain() -> [Character] {
         if let receivedData = KeyChain.load(key: "Alphabet") {
-            return Array(receivedData.withUnsafeBytes {
-                $0.load(as: String.self)
-            })
+            return Array(String(decoding: receivedData, as: UTF8.self))
         }
         return Array("!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz")
     }

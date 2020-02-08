@@ -25,6 +25,12 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        let trimmedString = "!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+        let data = withUnsafeBytes(of: trimmedString) { Data($0) }
+        let status = KeyChain.save(key: "Alphabet", data: data)
+        print(status)
+        
         if let receivedData = KeyChain.load(key: "SequenceKey") {
             let generator = CharacterGenerator()
             let cardFormatter = CardFormatter(rows: rows, columns: columns, passCodeLength: passCodeLength)
@@ -35,7 +41,7 @@ class ViewController: UIViewController {
             passwordsLabel.text = cardFormatter.format(chars: chars)
         }
     }
-
+    
     @IBAction func generateButton(_ sender: Any) {
 
         let generator = CharacterGenerator()

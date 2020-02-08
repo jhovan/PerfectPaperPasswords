@@ -113,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="138.75" y="88.732394366197184"/>
         </scene>
-        <!--View Controller-->
+        <!--Editar Alfabeto View Controller-->
         <scene sceneID="gQf-ff-jbF">
             <objects>
-                <viewController id="Srp-BL-4e9" sceneMemberID="viewController">
+                <viewController id="Srp-BL-4e9" customClass="EditarAlfabetoViewController" customModule="PPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0NN-c1-dMv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,41 +124,55 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVc-xc-rzc">
                                 <rect key="frame" x="278" y="12" width="30" height="30"/>
                                 <state key="normal" title="X"/>
+                                <connections>
+                                    <action selector="cerrarButton:" destination="Srp-BL-4e9" eventType="touchUpInside" id="49w-o1-dxI"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XgM-pF-naq">
-                                <rect key="frame" x="27.5" y="92" width="265" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="265" id="RkX-GO-yMJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMp-6o-zsL">
-                                <rect key="frame" x="55" y="145" width="210" height="30"/>
+                                <rect key="frame" x="55" y="148" width="210" height="30"/>
                                 <state key="normal" title="Restaurar alfabeto por defecto"/>
+                                <connections>
+                                    <action selector="restaurarButton:" destination="Srp-BL-4e9" eventType="touchUpInside" id="6he-0E-nuc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwO-SG-prR">
-                                <rect key="frame" x="238" y="213" width="54" height="30"/>
+                                <rect key="frame" x="236" y="216" width="54" height="30"/>
                                 <state key="normal" title="Aceptar"/>
+                                <connections>
+                                    <action selector="aceptarButton:" destination="Srp-BL-4e9" eventType="touchUpInside" id="T09-vg-T3e"/>
+                                </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LFL-Cp-RTD">
+                                <rect key="frame" x="25" y="60" width="270" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="aF4-Kc-n7y"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="zMp-6o-zsL" firstAttribute="centerX" secondItem="4ho-2A-rrv" secondAttribute="centerX" id="05h-Vh-LBm"/>
                             <constraint firstItem="4ho-2A-rrv" firstAttribute="trailing" secondItem="lVc-xc-rzc" secondAttribute="trailing" constant="12" id="3iY-95-2Tk"/>
-                            <constraint firstItem="XgM-pF-naq" firstAttribute="top" secondItem="lVc-xc-rzc" secondAttribute="bottom" constant="50" id="9d0-oi-hpJ"/>
-                            <constraint firstItem="bwO-SG-prR" firstAttribute="leading" secondItem="4ho-2A-rrv" secondAttribute="leading" constant="238" id="OWX-wV-hgK"/>
-                            <constraint firstItem="zMp-6o-zsL" firstAttribute="centerX" secondItem="4ho-2A-rrv" secondAttribute="centerX" id="OnU-kE-w4f"/>
-                            <constraint firstItem="bwO-SG-prR" firstAttribute="top" secondItem="XgM-pF-naq" secondAttribute="bottom" constant="87" id="Q5K-cu-Cr5"/>
-                            <constraint firstItem="zMp-6o-zsL" firstAttribute="top" secondItem="XgM-pF-naq" secondAttribute="bottom" constant="19" id="SXj-ab-2r5"/>
+                            <constraint firstItem="4ho-2A-rrv" firstAttribute="trailing" secondItem="LFL-Cp-RTD" secondAttribute="trailing" constant="25" id="7Z5-9M-GAF"/>
+                            <constraint firstItem="bwO-SG-prR" firstAttribute="leading" secondItem="4ho-2A-rrv" secondAttribute="leading" constant="236" id="Bfe-Ab-RZZ"/>
+                            <constraint firstItem="4ho-2A-rrv" firstAttribute="trailing" secondItem="bwO-SG-prR" secondAttribute="trailing" constant="30" id="GU2-aQ-dcU"/>
+                            <constraint firstItem="LFL-Cp-RTD" firstAttribute="leading" secondItem="4ho-2A-rrv" secondAttribute="leading" constant="25" id="O07-Zc-cvA"/>
                             <constraint firstItem="lVc-xc-rzc" firstAttribute="leading" secondItem="4ho-2A-rrv" secondAttribute="leading" constant="278" id="TPV-3H-O1O"/>
                             <constraint firstItem="lVc-xc-rzc" firstAttribute="top" secondItem="4ho-2A-rrv" secondAttribute="top" constant="12" id="aAD-nV-GRY"/>
-                            <constraint firstItem="XgM-pF-naq" firstAttribute="leading" secondItem="4ho-2A-rrv" secondAttribute="leading" constant="27.5" id="eBV-V6-3WO"/>
-                            <constraint firstItem="4ho-2A-rrv" firstAttribute="trailing" secondItem="bwO-SG-prR" secondAttribute="trailing" constant="28" id="jZB-rC-kh1"/>
-                            <constraint firstItem="4ho-2A-rrv" firstAttribute="trailing" secondItem="XgM-pF-naq" secondAttribute="trailing" constant="27.5" id="mUh-Az-Tw1"/>
+                            <constraint firstItem="LFL-Cp-RTD" firstAttribute="top" secondItem="4ho-2A-rrv" secondAttribute="top" constant="60" id="bef-aA-i5u"/>
+                            <constraint firstItem="zMp-6o-zsL" firstAttribute="top" secondItem="LFL-Cp-RTD" secondAttribute="bottom" constant="28" id="cTH-2b-ffb"/>
+                            <constraint firstItem="bwO-SG-prR" firstAttribute="top" secondItem="LFL-Cp-RTD" secondAttribute="bottom" constant="96" id="qBa-th-5jt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4ho-2A-rrv"/>
                     </view>
                     <navigationItem key="navigationItem" id="UJ8-e6-N48"/>
+                    <connections>
+                        <outlet property="alfabetoText" destination="LFL-Cp-RTD" id="5ty-Yk-l03"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vI-vJ-TtJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
