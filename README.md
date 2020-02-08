@@ -4,7 +4,7 @@ Generador de tarjetas de passcodes usando el sistema Perfect Paper Password.
 
 Genera una tarjeta de passcodes a partir de un contador de 128 bits y una llave simetrica de 256 bits.
 
-Actualmente general passcodes de longitud 4, en 4 columnas y 10 filas, a partir del alfabeto estandar para Perfect Paper Password !#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz.
+Actualmente general passcodes de longitud 4, en 4 columnas y 10 filas, a partir del alfabeto estandar para Perfect Paper Password "!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz".
 
 Todos estos parametros son configurables desde el codigo, pero la pantalla de configuracion en la app sigue en proceso.
 
