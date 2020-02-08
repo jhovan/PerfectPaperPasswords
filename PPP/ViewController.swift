@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let rows = 10
+    let columns = 4
+    let passCodeLength = 4
 
     @IBOutlet weak var sequenceKeyLabel: UILabel!
     
@@ -18,21 +22,32 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        if let receivedData = KeyChain.load(key: "SequenceKey") {
+            let generator = CharacterGenerator()
+            let cardFormatter = CardFormatter(rows: rows, columns: columns, passCodeLength: passCodeLength)
+            sequenceKeyLabel.text =  receivedData.hexEncodedString(options: .upperCase)
+            let result = generator.generate(counter: 0, numberOfCharacters: UInt(rows*columns*passCodeLength))
+            let chars = result.0
+            counterLabel.text = "\(result.1)"
+            passwordsLabel.text = cardFormatter.format(chars: chars)
+        }
+        
     }
 
     @IBAction func generateButton(_ sender: Any) {
-        let rows = 10
-        let columns = 4
-        let passCodeLength = 4
+
         let generator = CharacterGenerator()
         let cardFormatter = CardFormatter(rows: rows, columns: columns, passCodeLength: passCodeLength)
-        sequenceKeyLabel.text =  generator.getKeyAsData().hexEncodedString(options: .upperCase)
+        let keyData = generator.getKeyAsData()
+        sequenceKeyLabel.text =  keyData.hexEncodedString(options: .upperCase)
         let result = generator.generate(counter: 0, numberOfCharacters: UInt(rows*columns*passCodeLength))
         let chars = result.0
         counterLabel.text = "\(result.1)"
         passwordsLabel.text = cardFormatter.format(chars: chars)
         
+        let status = KeyChain.save(key: "SequenceKey", data: keyData)
+        print(status)
     }
         
 }

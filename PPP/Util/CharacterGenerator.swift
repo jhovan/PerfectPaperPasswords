@@ -17,7 +17,13 @@ class CharacterGenerator {
     var key: SymmetricKey
     
     init () {
-        key = SymmetricKey(size: .bits256)
+        self.key = SymmetricKey(size: .bits256)
+    }
+    
+    init(data: Data) {
+        self.key = data.withUnsafeBytes {
+            $0.load(as: SymmetricKey.self)
+        }
     }
     
     
@@ -45,6 +51,7 @@ class CharacterGenerator {
         return (chars, counter)
     }
         
+    
 
 }
 
