@@ -25,19 +25,19 @@ class CharacterGenerator {
         return withUnsafeBytes(of: self.key) { Data($0) }
     }
     
-    func generate(counter: UInt64, numberOfCharacters: UInt) -> (String, UInt64){
+    func generate(counter: UInt128, numberOfCharacters: UInt) -> (String, UInt128){
         var chars = ""
         var counter = counter
         while(chars.count < numberOfCharacters) {
             let data = withUnsafeBytes(of: counter) { Data($0) }
             let encryptedData = try? ChaChaPoly.seal(data, using: key).ciphertext
-            var encryptedCounter: UInt64 = 0
+            var encryptedCounter: UInt128 = 0
             let bytesCopied = withUnsafeMutableBytes(of: &encryptedCounter, { encryptedData!.copyBytes(to: $0)} )
             assert(bytesCopied == MemoryLayout.size(ofValue: encryptedCounter))
             
             while(encryptedCounter != 0 && chars.count < numberOfCharacters) {
-                let res = Int(encryptedCounter % UInt64(alphabet.count))
-                encryptedCounter /= UInt64(alphabet.count)
+                let res = Int(encryptedCounter % UInt128(alphabet.count))
+                encryptedCounter /= UInt128(alphabet.count)
                 chars.append(alphabet[res])
             }
             counter += 1
@@ -47,3 +47,4 @@ class CharacterGenerator {
         
 
 }
+
