@@ -1,5 +1,7 @@
 # PerfectPaperPaswords
 
+Autor: José Jhovan Gallardo Valdez
+
 Generador de tarjetas de passcodes usando el sistema Perfect Paper Password.
 
 Genera una tarjeta de passcodes a partir de un contador de 128 bits y una llave simetrica de 256 bits.
