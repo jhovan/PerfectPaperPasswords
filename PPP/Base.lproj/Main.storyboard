@@ -71,9 +71,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTq-AE-bnP">
-                                <rect key="frame" x="211" y="11" width="102" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTq-AE-bnP">
+                                <rect key="frame" x="210" y="12" width="102" height="30"/>
                                 <state key="normal" title="Editar Alfabeto"/>
                                 <connections>
                                     <segue destination="Srp-BL-4e9" kind="presentation" id="pw4-DV-fUf"/>
@@ -84,9 +83,11 @@
                         <constraints>
                             <constraint firstItem="1E3-oz-WUc" firstAttribute="top" secondItem="ACt-7J-q7w" secondAttribute="bottom" constant="32" id="3qA-bt-bXC"/>
                             <constraint firstItem="ACt-7J-q7w" firstAttribute="top" secondItem="phj-rd-aOM" secondAttribute="bottom" constant="32" id="5Bg-wh-lsa"/>
+                            <constraint firstItem="NTq-AE-bnP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="7PR-dP-MWD"/>
                             <constraint firstItem="phj-rd-aOM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="LOw-Zo-rTW"/>
                             <constraint firstItem="7uT-O6-Fle" firstAttribute="baseline" secondItem="wx2-rV-eNl" secondAttribute="baseline" id="SDI-jh-0l6"/>
                             <constraint firstItem="7uT-O6-Fle" firstAttribute="leading" secondItem="wx2-rV-eNl" secondAttribute="trailing" constant="8" symbolic="YES" id="avF-N3-OKk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NTq-AE-bnP" secondAttribute="trailing" constant="8" id="b1S-MC-YTG"/>
                             <constraint firstItem="phj-rd-aOM" firstAttribute="top" secondItem="wx2-rV-eNl" secondAttribute="bottom" constant="8" id="bDD-cW-W3h"/>
                             <constraint firstItem="wx2-rV-eNl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="d1m-TI-18p"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zsv-Z8-jxZ" secondAttribute="trailing" constant="149" id="gN8-6N-RE1"/>
@@ -97,6 +98,7 @@
                             <constraint firstItem="Zsv-Z8-jxZ" firstAttribute="baseline" secondItem="phj-rd-aOM" secondAttribute="baseline" id="qJn-ux-71h"/>
                             <constraint firstItem="1E3-oz-WUc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="r84-P9-hM0"/>
                             <constraint firstItem="wx2-rV-eNl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="t8M-Ds-lVY"/>
+                            <constraint firstItem="NTq-AE-bnP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="210" id="xA1-aY-dTN"/>
                             <constraint firstItem="Zsv-Z8-jxZ" firstAttribute="firstBaseline" secondItem="phj-rd-aOM" secondAttribute="baseline" id="xXK-98-CAT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -118,14 +120,49 @@
                     <view key="view" contentMode="scaleToFill" id="0NN-c1-dMv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVc-xc-rzc">
+                                <rect key="frame" x="278" y="12" width="30" height="30"/>
+                                <state key="normal" title="X"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XgM-pF-naq">
+                                <rect key="frame" x="27.5" y="92" width="265" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="265" id="RkX-GO-yMJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMp-6o-zsL">
+                                <rect key="frame" x="55" y="145" width="210" height="30"/>
+                                <state key="normal" title="Restaurar alfabeto por defecto"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwO-SG-prR">
+                                <rect key="frame" x="238" y="213" width="54" height="30"/>
+                                <state key="normal" title="Aceptar"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4ho-2A-rrv" firstAttribute="trailing" secondItem="lVc-xc-rzc" secondAttribute="trailing" constant="12" id="3iY-95-2Tk"/>
+                            <constraint firstItem="XgM-pF-naq" firstAttribute="top" secondItem="lVc-xc-rzc" secondAttribute="bottom" constant="50" id="9d0-oi-hpJ"/>
+                            <constraint firstItem="bwO-SG-prR" firstAttribute="leading" secondItem="4ho-2A-rrv" secondAttribute="leading" constant="238" id="OWX-wV-hgK"/>
+                            <constraint firstItem="zMp-6o-zsL" firstAttribute="centerX" secondItem="4ho-2A-rrv" secondAttribute="centerX" id="OnU-kE-w4f"/>
+                            <constraint firstItem="bwO-SG-prR" firstAttribute="top" secondItem="XgM-pF-naq" secondAttribute="bottom" constant="87" id="Q5K-cu-Cr5"/>
+                            <constraint firstItem="zMp-6o-zsL" firstAttribute="top" secondItem="XgM-pF-naq" secondAttribute="bottom" constant="19" id="SXj-ab-2r5"/>
+                            <constraint firstItem="lVc-xc-rzc" firstAttribute="leading" secondItem="4ho-2A-rrv" secondAttribute="leading" constant="278" id="TPV-3H-O1O"/>
+                            <constraint firstItem="lVc-xc-rzc" firstAttribute="top" secondItem="4ho-2A-rrv" secondAttribute="top" constant="12" id="aAD-nV-GRY"/>
+                            <constraint firstItem="XgM-pF-naq" firstAttribute="leading" secondItem="4ho-2A-rrv" secondAttribute="leading" constant="27.5" id="eBV-V6-3WO"/>
+                            <constraint firstItem="4ho-2A-rrv" firstAttribute="trailing" secondItem="bwO-SG-prR" secondAttribute="trailing" constant="28" id="jZB-rC-kh1"/>
+                            <constraint firstItem="4ho-2A-rrv" firstAttribute="trailing" secondItem="XgM-pF-naq" secondAttribute="trailing" constant="27.5" id="mUh-Az-Tw1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4ho-2A-rrv"/>
                     </view>
                     <navigationItem key="navigationItem" id="UJ8-e6-N48"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vI-vJ-TtJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="870" y="89"/>
+            <point key="canvasLocation" x="870" y="88.732394366197184"/>
         </scene>
     </scenes>
 </document>
